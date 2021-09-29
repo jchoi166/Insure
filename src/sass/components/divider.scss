@@ -1,0 +1,12 @@
+.divider {
+    border: 0; 
+    width: 19rem; 
+    height: 1px;
+    background: lightgray;
+
+    @include respond(phone) {
+        margin: auto; 
+        background: $color-neutral-grayish-violet;
+        
+    }
+}

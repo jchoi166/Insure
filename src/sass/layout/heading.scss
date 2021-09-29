@@ -1,0 +1,106 @@
+.heading {
+    background-color: $color-primary-dark-violet;
+    color: white; 
+    position: relative; 
+    z-index: 1;
+    padding-top: 10rem;
+    // overflow: hidden; 
+
+    @include respond(phone) {
+        // overflow-x: hidden; 
+    }
+
+    &__container {
+        display: grid; 
+        grid-template-columns: minmax(auto, 50%) 1fr;
+
+        padding: 10rem 15rem; 
+
+        @include respond(tab-port) {
+            padding: 10rem 6rem;
+        }
+
+        @include respond(phone) {
+            padding: 0; 
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr min-content;
+            
+        }
+
+    }
+
+    &__info {
+        
+        p {
+            margin: 3rem 0; 
+            line-height: 2.7rem;
+        }
+
+        @include respond(phone) {
+            grid-row: 2 / 3;
+            
+            text-align: center;
+            padding: 6rem 3rem 10rem 3rem;
+        }
+    }
+
+    &__divider {
+        @include respond(phone) {
+            display: none; 
+        }
+    }
+
+    &__button {
+        border: 1px solid white;
+        font-weight: normal;
+    }
+
+    &__img {
+        width: 100%; 
+        position: relative; 
+        
+        img {
+            position: absolute;
+            height: auto; 
+            width: 83%; 
+            max-width: 50rem; 
+            right: 0;
+
+            @include respond(phone) {
+                position: relative;
+                max-width: 100%; 
+                width: 100%; 
+            }
+        }
+    }
+
+}
+
+.pattern {
+    position: absolute;
+
+    &--left {
+        transform: translate(-30%, 65%);
+        bottom: 0;
+        width: 10%;
+
+        @include respond(phone) {
+            width: 40%;
+            top: 10%; 
+        }
+    }
+
+    &--right {
+        right: 0; 
+        transform: translateY(-15%);
+        width: 28%;
+        z-index: 2; 
+        
+        @include respond(phone) {
+            bottom: -20%;
+            transform: translateX(11%);
+            right: -15%;
+            width: 40%;
+        }
+    }
+}
